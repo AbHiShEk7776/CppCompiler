@@ -268,7 +268,7 @@ private:
 
         } else if (AssignmentNode* assignNode = dynamic_cast<AssignmentNode*>(node)) {
             generateNode(assignNode->value);
-            output << "    mov [rel " << assignNode->varName << "], rax\n";
+            output << "    mov [" << assignNode->varName << "], rax\n";
         } else if (BinaryOpNode* binOpNode = dynamic_cast<BinaryOpNode*>(node)) {
             generateNode(binOpNode->left);
             output << "    push rax\n";
